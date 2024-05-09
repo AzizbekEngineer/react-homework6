@@ -46,8 +46,8 @@ const Products = () => {
         <div className="resources__btn" onClick={() => setOption("users")}>
           Users
         </div>
-        <div className="resources__btn" onClick={() => setOption("todos")}>
-          Todos
+        <div className="resources__btn" onClick={() => setOption("recipes")}>
+          Recipes
         </div>
       </div>
       <div className="products container">
@@ -107,20 +107,23 @@ const Products = () => {
               </div>
             ))}
           </div>
-        ) : option === "todos" ? (
+        ) : option === "recipes" ? (
           <div className="products__cards">
-            {data?.map((todo) => (
-              <div className="products__card" key={todo.id}>
-                <div
-                  className="products__img"
-                  onClick={() => openModal(todo)}
-                ></div>
+            {data?.map((recipes) => (
+              <div className="products__card" key={recipes.id}>
+                <div className="products__img">
+                  <img
+                    src={recipes.image}
+                    onClick={() => openModal(recipes)}
+                    alt={recipes.name}
+                  />
+                </div>
                 <div className="products__icons">
                   <div className="products__icon"></div>
                 </div>
                 <div className="products__infos">
-                  <h4 className="products__name">{todo.todo}</h4>
-                  <h4 className="products__name">{todo.userId}</h4>
+                  <h4 className="products__name">{recipes.name}</h4>
+                  {/* <h4 className="products__name">{recipes.ingredients[0]}</h4> */}
                   <div className="products__stars">
                     <FaStar />
                     <FaStar />
@@ -128,7 +131,9 @@ const Products = () => {
                     <FaStar />
                     <FaStar />
                   </div>
-                  <p className="products__category">{todo.completed}</p>
+                  <p className="products__category">
+                    {/* {recipes.instructions[0]} */}
+                  </p>
                 </div>
               </div>
             ))}
