@@ -1,0 +1,56 @@
+.reaction {
+    padding: 40px 0;
+
+    &__cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+    }
+
+    &__card {
+        padding: 30px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border: 1px solid #0002;
+        background: #F6F6F6;
+        border-radius: 10px;
+
+        &:hover {
+            box-shadow: 0 0 2px black;
+        }
+    }
+
+    &__title {
+        font-size: 36px;
+        line-height: 42px;
+        color: black;
+    }
+
+    &__desc {
+
+        font-size: 16px;
+        line-height: 20px;
+        color: #8B8E99;
+    }
+}
+
+@media (max-width:1050px) {
+    .reaction {
+        &__cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+    }
+}
+
+@media (max-width:730px) {
+    .reaction {
+        &__cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+    }
+}
